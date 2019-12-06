@@ -1,0 +1,107 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  ForgelinPlugin (Forgelin-1.8.4.jar)
+Contact their authors BEFORE contacting forge
+
+// Daisy, daisy...
+
+Time: 01.12.19 2:51
+Description: Exception in server tick loop
+
+net.minecraftforge.fml.common.LoaderExceptionModCrash: Caught exception from Gravitation Suite (gravisuite)
+Caused by: java.lang.NoClassDefFoundError: ic2/core/item/tool/ItemElectricTool$ToolClass
+	at com.chocohead.gravisuite.Config.loadConfig(Gravisuite.java:171)
+	at com.chocohead.gravisuite.Gravisuite.load(Gravisuite.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraftforge.fml.common.FMLModContainer.handleModStateEvent(FMLModContainer.java:637)
+	at sun.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.google.common.eventbus.Subscriber.invokeSubscriberMethod(Subscriber.java:91)
+	at com.google.common.eventbus.Subscriber$SynchronizedSubscriber.invokeSubscriberMethod(Subscriber.java:150)
+	at com.google.common.eventbus.Subscriber$1.run(Subscriber.java:76)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:399)
+	at com.google.common.eventbus.Subscriber.dispatchEvent(Subscriber.java:71)
+	at com.google.common.eventbus.Dispatcher$PerThreadQueuedDispatcher.dispatch(Dispatcher.java:116)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:217)
+	at net.minecraftforge.fml.common.LoadController.sendEventToModContainer(LoadController.java:219)
+	at net.minecraftforge.fml.common.LoadController.propogateStateMessage(LoadController.java:197)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.google.common.eventbus.Subscriber.invokeSubscriberMethod(Subscriber.java:91)
+	at com.google.common.eventbus.Subscriber$SynchronizedSubscriber.invokeSubscriberMethod(Subscriber.java:150)
+	at com.google.common.eventbus.Subscriber$1.run(Subscriber.java:76)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:399)
+	at com.google.common.eventbus.Subscriber.dispatchEvent(Subscriber.java:71)
+	at com.google.common.eventbus.Dispatcher$PerThreadQueuedDispatcher.dispatch(Dispatcher.java:116)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:217)
+	at net.minecraftforge.fml.common.LoadController.distributeStateMessage(LoadController.java:136)
+	at net.minecraftforge.fml.common.Loader.preinitializeMods(Loader.java:629)
+	at net.minecraftforge.fml.server.FMLServerHandler.beginServerLoading(FMLServerHandler.java:99)
+	at net.minecraftforge.fml.common.FMLCommonHandler.onServerStart(FMLCommonHandler.java:333)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71197_b(DedicatedServer.java:125)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.ClassNotFoundException: ic2.core.item.tool.ItemElectricTool$ToolClass
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:191)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 37 more
+Caused by: java.lang.NullPointerException
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 8.1 (amd64) version 6.3
+	Java Version: 1.8.0_45, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 530300104 bytes (505 MB) / 1030750208 bytes (983 MB) up to 1030750208 bytes (983 MB)
+	JVM Flags: 2 total; -Xms1G -Xmx1G
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.42 Powered by Forge 14.23.5.2847 25 mods loaded, 25 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State | ID                    | Version           | Source                                  | Signature                                |
+	|:----- |:--------------------- |:----------------- |:--------------------------------------- |:---------------------------------------- |
+	| LCH   | minecraft             | 1.12.2            | minecraft.jar                           | None                                     |
+	| LCH   | mcp                   | 9.42              | minecraft.jar                           | None                                     |
+	| LCH   | FML                   | 8.0.99.99         | forge-1.12.2-14.23.5.2847-universal.jar | None                                     |
+	| LCH   | forge                 | 14.23.5.2847      | forge-1.12.2-14.23.5.2847-universal.jar | None                                     |
+	| LCH   | ic2                   | 2.8.187-ex112     | industrialcraft-2-2.8.187-ex112.jar     | de041f9f6187debbc77034a344134053277aa3b0 |
+	| LCH   | advanced_solar_panels | 4.3.0             | Advanced+Solar+Panels-4.3.0.jar         | None                                     |
+	| LCH   | backpack              | 3.0.2             | backpack-3.0.2-1.12.2.jar               | None                                     |
+	| LCH   | buildcraftlib         | 7.99.24.3         | buildcraft-all-7.99.24.3.jar            | None                                     |
+	| LCH   | buildcraftcore        | 7.99.24.3         | buildcraft-all-7.99.24.3.jar            | None                                     |
+	| LCH   | buildcraftbuilders    | 7.99.24.3         | buildcraft-all-7.99.24.3.jar            | None                                     |
+	| LCH   | buildcrafttransport   | 7.99.24.3         | buildcraft-all-7.99.24.3.jar            | None                                     |
+	| LCH   | buildcraftsilicon     | 7.99.24.3         | buildcraft-all-7.99.24.3.jar            | None                                     |
+	| LCH   | buildcraftenergy      | 7.99.24.3         | buildcraft-all-7.99.24.3.jar            | None                                     |
+	| LCH   | jei                   | 4.15.0.292        | jei_1.12.2-4.15.0.292.jar               | None                                     |
+	| LCH   | forestry              | 5.8.2.409         | forestry_1.12.2-5.8.2.409.jar           | None                                     |
+	| LCH   | buildcraftcompat      | 7.99.24.3         | buildcraft-all-7.99.24.3.jar            | None                                     |
+	| LCH   | buildcraftfactory     | 7.99.24.3         | buildcraft-all-7.99.24.3.jar            | None                                     |
+	| LCH   | buildcraftrobotics    | 7.99.24.3         | buildcraft-all-7.99.24.3.jar            | None                                     |
+	| LCH   | forgelin              | 1.8.4             | Forgelin-1.8.4.jar                      | None                                     |
+	| LCE   | gravisuite            | 3.1.0             | GravitationSuite_1.12.2_3.1.0.jar       | None                                     |
+	| LC    | ichunutil             | 7.2.2             | iChunUtil_1.12.2_7.2.2.jar              | 4db5c2bd1b556f252a5b8b54b256d381b2a0a6b8 |
+	| LC    | gravitygun            | 7.1.0             | GravityGun-1.12.2-7.1.0.jar             | 4db5c2bd1b556f252a5b8b54b256d381b2a0a6b8 |
+	| LC    | ironchest             | 1.12.2-7.0.67.844 | ironchest-1.12.2-7.0.72.847.jar         | None                                     |
+	| LC    | railcraft             | 12.0.0            | railcraft-12.0.0.jar                    | a0c255ac501b2749537d5824bb0f0588bf0320fa |
+	| LC    | treechopper           | 1.2.4             | TreeChopper-1.12.2-1.2.4.jar            | None                                     |
+
+	Loaded coremods (and transformers): 
+ForgelinPlugin (Forgelin-1.8.4.jar)
+  
+	Profiler Position: N/A (disabled)
+	Is Modded: Definitely; Server brand changed to 'fml,forge'
+	Type: Dedicated Server (map_server.txt)

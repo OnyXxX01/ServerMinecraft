@@ -1,0 +1,69 @@
+---- Minecraft Crash Report ----
+// You're mean.
+
+Time: 23.11.19 13:49
+Description: Exception in server tick loop
+
+net.minecraftforge.fml.common.LoaderExceptionModCrash: Caught exception from IndustrialCraft 2 (ic2)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at java.util.HashMap.resize(Unknown Source)
+	at java.util.HashMap.putVal(Unknown Source)
+	at java.util.HashMap.put(Unknown Source)
+	at com.google.common.collect.SparseImmutableTable.<init>(SparseImmutableTable.java:76)
+	at com.google.common.collect.RegularImmutableTable.forOrderedComponents(RegularImmutableTable.java:169)
+	at com.google.common.collect.RegularImmutableTable.forCellsInternal(RegularImmutableTable.java:159)
+	at com.google.common.collect.RegularImmutableTable.forCells(RegularImmutableTable.java:131)
+	at com.google.common.collect.ImmutableTable$Builder.build(ImmutableTable.java:359)
+	at com.google.common.collect.ImmutableTable.copyOf(ImmutableTable.java:221)
+	at com.google.common.collect.ImmutableTable.copyOf(ImmutableTable.java:211)
+	at net.minecraft.block.state.BlockStateContainer$StateImplementation.func_177235_a(BlockStateContainer.java:281)
+	at net.minecraft.block.state.BlockStateContainer.<init>(BlockStateContainer.java:95)
+	at net.minecraft.block.state.BlockStateContainer.<init>(BlockStateContainer.java:62)
+	at ic2.core.block.state.Ic2BlockState.<init>(Ic2BlockState.java:24)
+	at ic2.core.block.BlockTileEntity.func_180661_e(BlockTileEntity.java:254)
+	at net.minecraft.block.Block.<init>(Block.java:234)
+	at net.minecraft.block.Block.<init>(Block.java:243)
+	at ic2.core.block.BlockBase.<init>(BlockBase.java:45)
+	at ic2.core.block.BlockBase.<init>(BlockBase.java:37)
+	at ic2.core.block.BlockTileEntity.<init>(BlockTileEntity.java:110)
+	at ic2.core.block.BlockTileEntity.create(BlockTileEntity.java:102)
+	at ic2.core.block.BlockTileEntity.create(BlockTileEntity.java:92)
+	at ic2.core.block.TeBlockRegistry.buildBlocks(TeBlockRegistry.java:244)
+	at ic2.core.init.BlocksItems.initBlocks(BlocksItems.java:171)
+	at ic2.core.init.BlocksItems.init(BlocksItems.java:157)
+	at ic2.core.IC2.load(IC2.java:222)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraftforge.fml.common.FMLModContainer.handleModStateEvent(FMLModContainer.java:637)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (x86) version 10.0
+	Java Version: 1.8.0_231, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) Client VM (mixed mode, sharing), Oracle Corporation
+	Memory: 146461384 bytes (139 MB) / 259522560 bytes (247 MB) up to 259522560 bytes (247 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.42 Powered by Forge 14.23.5.2847 5 mods loaded, 5 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State | ID        | Version       | Source                                  | Signature                                |
+	|:----- |:--------- |:------------- |:--------------------------------------- |:---------------------------------------- |
+	| LCH   | minecraft | 1.12.2        | minecraft.jar                           | None                                     |
+	| LCH   | mcp       | 9.42          | minecraft.jar                           | None                                     |
+	| LCH   | FML       | 8.0.99.99     | forge-1.12.2-14.23.5.2847-universal.jar | None                                     |
+	| LCH   | forge     | 14.23.5.2847  | forge-1.12.2-14.23.5.2847-universal.jar | None                                     |
+	| LCE   | ic2       | 2.8.170-ex112 | industrialcraft-2-2.8.170-ex112.jar     | de041f9f6187debbc77034a344134053277aa3b0 |
+
+	Loaded coremods (and transformers): 
+	Profiler Position: N/A (disabled)
+	Is Modded: Definitely; Server brand changed to 'fml,forge'
+	Type: Dedicated Server (map_server.txt)
